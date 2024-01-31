@@ -1,55 +1,32 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
-    <View style={styles.phoneContainer}>
-      <View style={styles.screenContainer}>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Button 1</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>Button 2</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+    <View style={styles.taskWrapper}>
+      <Text style={styles.sectionTitle}>Today's Task</Text>
+      <View style={styles.item}></View>
+      {/* Additional components or content can be added here */}
       <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  phoneContainer: {
+  taskWrapper: {
     flex: 1,
-    backgroundColor: "black", // Smartphone frame color
-    justifyContent: "flex-end",
-    paddingTop: 5,
-    paddingLeft: 600,
-    paddingRight: 600,
-    paddingBottom: 5,
+    paddingTop: 80,
+    paddingHorizontal: 20,
   },
-  screenContainer: {
-    flex: 1,
-    backgroundColor: "#fff", // Screen background color
-    alignItems: "center",
-    justifyContent: "center",
-    borderRadius: 20,
-    overflow: "hidden",
-  },
-  buttonContainer: {
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: "#007AFF", // Button color
-    padding: 10,
-    marginHorizontal: 10,
-    marginBottom: 10,
-    borderRadius: 10,
-  },
-  buttonText: {
-    color: "#fff", // Button text color
-    fontSize: 16,
+  sectionTitle: {
+    fontSize: 24,
     fontWeight: "bold",
+  },
+  item: {
+    // Add styles for your task item as needed
+    backgroundColor: "lightgray",
+    height: 50,
+    marginTop: 20,
   },
 });
